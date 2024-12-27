@@ -38,7 +38,8 @@ SELECT
   city_json.name,
   city_json.state,
   city_json.total,
-  city_json.free/city_json.total AS percent_free
+  city_json.total - city_json.free AS occupied,
+  city_json.free / city_json.total AS percent_free
 FROM 
   one_city_json;
 ```
@@ -74,11 +75,8 @@ The size of the bubbles shows how many parking spaces are available in total. Th
 
 <BarChart 
     data={one_city}
-    title="Percentage and absolute number of free parking lots"
+    title="Number of free parking lots"
     x=name
-    y=percent_free
-    y2=free
-    yFmt=pct
-    type=grouped
-    swapXY=false
+    y=free
+    swapXY=true
 />
