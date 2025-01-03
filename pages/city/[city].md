@@ -28,7 +28,7 @@ WITH one_city_json AS (
 SELECT 
   last_downloaded,
   last_updated,
-  city_json.address,
+  COALESCE(city_json->>'address', '') AS address,
   city_json.coords.lat,
   city_json.coords.lng,
   city_json.forecast,

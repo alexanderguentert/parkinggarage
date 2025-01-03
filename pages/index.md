@@ -1,5 +1,6 @@
 ---
-title: Welcome to Evidence
+title: Parking Garage
+description: Current occupancy of parking garages in various cities in Europe
 ---
 
 ```sql cities
